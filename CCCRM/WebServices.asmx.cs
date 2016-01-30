@@ -163,13 +163,13 @@ namespace CCCRM
 
         [WebMethod]
         public string BookAppointment(
-            int AppointmentNo,
             string Officer,
             string Doctor,
             DateTime AppointmentDate,
             string AppointmentTime,
             string NRIC)
         {
+            var AppointmentNo = "";
             var ws = new net.azurewebsites.codistri.WebServices();
             var wsParams = new object[] { 
                 AppointmentNo,
