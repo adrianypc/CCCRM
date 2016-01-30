@@ -160,5 +160,39 @@ namespace CCCRM
                 "AppointmentTime",
                 wsParams);
         }
+
+        [WebMethod]
+        public string BookAppointment(
+            int AppointmentNo,
+            string Officer,
+            string Doctor,
+            DateTime AppointmentDate,
+            string AppointmentTime,
+            string NRIC)
+        {
+            var ws = new net.azurewebsites.codistri.WebServices();
+            var wsParams = new object[] { 
+                AppointmentNo,
+                Officer,
+                Doctor,
+                AppointmentDate,
+                AppointmentTime,
+                NRIC};
+
+            var returnMessage = ws.RunActionByName("WebServiceUser",
+                "CCCRM!@#",
+                net.azurewebsites.codistri.ExportStyle.CsvWithoutHeader,
+                @"DrChatSite/Application.axl",
+                "ApptDetail.dxl",
+                "OK",
+                wsParams
+                );
+
+            if (!returnMessage.StartsWith("Error"))
+                returnMessage = "Appointment registered ok";
+
+            return returnMessage;
+
+        }
     }
 }

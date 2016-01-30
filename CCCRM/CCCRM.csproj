@@ -181,6 +181,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Web References\net.azurewebsites.codistri\WebServices.disco" />
+    <Content Include="TestAppointmentDetail.html" />
     <Content Include="TestForm.html" />
     <Content Include="WebServices.asmx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
