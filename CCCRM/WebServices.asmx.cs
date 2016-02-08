@@ -145,7 +145,7 @@ namespace CCCRM
         }
 
         [WebMethod]
-        public string GetFreeTimeSlots(int doctorNo,DateTime appointmentDate)
+        public string GetFreeTimeSlots(DateTime appointmentDate, int doctorNo)
         {
             var ws = new net.azurewebsites.codistri.WebServices();
             var wsParams = new object[]{
