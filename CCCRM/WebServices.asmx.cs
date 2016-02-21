@@ -145,12 +145,14 @@ namespace CCCRM
         }
 
         [WebMethod]
-        public string GetFreeTimeSlots(DateTime appointmentDate, int doctorNo)
+        public string GetFreeTimeSlots(DateTime appointmentStartDate,DateTime appointmentEndDate, int doctorNo,string clinicCode)
         {
             var ws = new net.azurewebsites.codistri.WebServices();
             var wsParams = new object[]{
                 doctorNo,
-                appointmentDate
+                clinicCode,
+                appointmentStartDate,
+                appointmentEndDate
             };
 
             return ws.GetComboListByName("WebServiceUser",
@@ -166,7 +168,8 @@ namespace CCCRM
         public string BookAppointment(
             string Officer,
             string Doctor,
-            DateTime AppointmentDate,
+            DateTime AppointmentStartDate,
+            DateTime AppointmentEndDate,
             string AppointmentTime,
             string NRIC,
             string Surname,
@@ -178,7 +181,6 @@ namespace CCCRM
                 AppointmentNo,
                 Officer,
                 Doctor,
-                AppointmentDate,
                 AppointmentTime,
                 NRIC,
                 Surname,
