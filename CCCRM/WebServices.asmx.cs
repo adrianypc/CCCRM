@@ -181,6 +181,8 @@ namespace CCCRM
                 AppointmentNo,
                 Officer,
                 Doctor,
+                AppointmentStartDate,
+                AppointmentEndDate,
                 AppointmentTime,
                 NRIC,
                 Surname,
